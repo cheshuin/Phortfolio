@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============ 1. МЕТА-ТЕГИ: подставь своё ============ -->
+<title>Сергей Южный — веб-разработчик, сайты на WordPress</title>
+<meta name="description" content="Разработка и доработка сайтов на WordPress: сборка под ключ, миграция с Tilda и Bitrix, вёрстка по макетам из Figma, WooCommerce. 226 выполненных заказов, активная работа с 2021 года.">
+<meta name="keywords" content="WordPress, разработка сайтов, WooCommerce, вёрстка по макету, перенос с Tilda, доработка сайта, Figma">
+<meta name="author" content="Сергей Южный">
+<meta name="robots" content="index, follow">
+
+<!-- Соцсети: превью при отправке ссылки -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Сергей Южный — веб-разработчик, сайты на WordPress">
+<meta property="og:description" content="226 выполненных заказов, активная работа с 2021 года. Сайты под ключ, миграции, вёрстка по макетам, WooCommerce.">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="theme-color" content="#0f1216">
+<meta name="theme-color" content="#fbfbfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1216" media="(prefers-color-scheme: dark)">
+
+<!-- Фавиконка: буква в квадрате. Поменяй букву и цвет -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232456d6'/><text x='16' y='23' font-family='Arial,sans-serif' font-size='19' font-weight='bold' fill='white' text-anchor='middle'>%D0%A1</text></svg>">
+
+<!-- ============ 2. РАЗМЕТКА ДЛЯ ПОИСКОВИКОВ ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Сергей Южный",
+  "description": "Разработка и доработка сайтов на WordPress: сборка под ключ, миграции, вёрстка по макетам, WooCommerce.",
+  "areaServed": "RU",
+  "serviceType": [
+    "Разработка сайтов на WordPress",
+    "Перенос сайта на WordPress",
+    "Вёрстка по макету",
+    "WooCommerce",
+    "Доработка сайтов"
+  ]
+}
+</script>
+
+<style>
+/* ============ 3. СТИЛЬ: меняешь только этот блок ============
+   Палитра по умолчанию — синий/графит. Чтобы сменить, замени
+   значения --accent и --accent-ink:
+     изумруд   : --accent:#0f7b6c; --accent-ink:#ffffff;
+     индиго    : --accent:#4b3fd6; --accent-ink:#ffffff;
+     графит    : --accent:#1f2937; --accent-ink:#ffffff;
+     терракота : --accent:#c05a34; --accent-ink:#ffffff;
+   По умолчанию включена ТЁМНАЯ тема. Кнопка ◐ в шапке переключает
+   на светлую, выбор запоминается в браузере посетителя.
+============================================================ */
+:root{
+  color-scheme: light dark;
+  --accent:#2456d6;
+  --accent-ink:#ffffff;
+  --accent-soft:#f2f6ff;
+  --ink:#14161a;
+  --muted:#5d6672;
+  --bg:#fbfbfc;
+  --card:#ffffff;
+  --line:#e3e6ea;
+  --radius:14px;
+  --maxw:960px;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 8px 24px -12px rgba(16,24,40,.12);
+}
+[data-theme="dark"]{
+  --ink:#eef1f5; --muted:#a3adba; --bg:#0f1216; --card:#161a20;
+  --line:#242a33; --accent-soft:#151c2c;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.6);
+}
+@media (prefers-color-scheme: dark){
+  [data-theme="auto"]{
+    --ink:#eef1f5; --muted:#a3adba; --bg:#0f1216; --card:#161a20;
+    --line:#242a33; --accent-soft:#151c2c;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.6);
+  }
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"kern" 1,"liga" 1;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:var(--card);padding:10px 16px;border-radius:8px;z-index:20}
+
+/* ---- шапка ---- */
+.topbar{
+  position:sticky;top:0;z-index:10;background:var(--bg);
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)
+}
+.topbar .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.logo svg{display:block;flex:none}
+.logo small{display:block;font-weight:400;font-size:12px;color:var(--muted);letter-spacing:0}
+nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+nav a{
+  text-decoration:none;color:var(--muted);font-size:14px;padding:8px 12px;border-radius:9px
+}
+nav a:hover{color:var(--ink);background:var(--accent-soft)}
+.btn{
+  display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;
+  padding:10px 18px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid transparent
+}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+#theme{
+  background:transparent;border:1px solid var(--line);color:var(--muted);cursor:pointer;
+  width:38px;height:38px;border-radius:10px;font-size:16px;line-height:1;display:grid;place-items:center
+}
+#theme:hover{color:var(--ink)}
+@media (max-width:720px){ nav a{display:none} }
+
+/* ---- первый экран ---- */
+.hero{padding:64px 0 36px}
+.eyebrow{
+  display:inline-block;font-size:13px;font-weight:600;color:var(--accent);
+  background:var(--accent-soft);border-radius:999px;padding:6px 14px;margin:0 0 18px
+}
+h1{font-size:clamp(29px,4.6vw,44px);line-height:1.12;margin:0 0 16px;letter-spacing:-.025em}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);margin:0 0 26px;max-width:46em}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+
+/* ---- цифры ---- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;padding:8px 0 44px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:27px;line-height:1.15;letter-spacing:-.02em}
+.stat span{font-size:13px;color:var(--muted)}
+
+h2{font-size:clamp(23px,3vw,30px);margin:56px 0 8px;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0 0 26px;max-width:44em}
+
+/* ---- услуги ---- */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.service{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow)}
+.service h3{margin:0 0 7px;font-size:17px;letter-spacing:-.01em}
+.service p{margin:0;color:var(--muted);font-size:15px}
+
+/* ---- кейсы ---- */
+.case{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin:0 0 18px;box-shadow:var(--shadow)}
+.case h3{margin:0 0 12px;font-size:clamp(19px,2.6vw,24px);line-height:1.28;letter-spacing:-.02em}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.meta span{font-size:13px;color:var(--muted);background:var(--accent-soft);border-radius:999px;padding:5px 12px}
+.case h4{margin:22px 0 7px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.case p{margin:0 0 10px}
+.case ol,.case ul{margin:0 0 10px;padding-left:22px}
+.case li{margin:0 0 5px}
+blockquote{
+  margin:16px 0;padding:14px 20px;border-left:3px solid var(--accent);
+  background:var(--accent-soft);border-radius:0 10px 10px 0;font-size:16px
+}
+blockquote footer{font-size:13px;color:var(--muted);margin-top:6px}
+.media{
+  border:2px dashed var(--line);border-radius:12px;color:var(--muted);
+  font-size:14px;text-align:center;padding:36px 16px;margin:18px 0 2px
+}
+.media img{max-width:100%;display:block;border-radius:10px}
+.result{display:flex;gap:10px;align-items:flex-start;background:var(--accent-soft);border-radius:10px;padding:14px 18px;margin:16px 0 4px}
+.result b{color:var(--accent)}
+
+/* ---- процесс ---- */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.steps li{counter-increment:s;position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px 20px 68px;box-shadow:var(--shadow)}
+.steps li::before{
+  content:counter(s);position:absolute;left:20px;top:19px;width:32px;height:32px;border-radius:50%;
+  background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:700;font-size:15px
+}
+.steps b{display:block;margin:0 0 4px}
+.steps p{margin:0;color:var(--muted)}
+
+table{width:100%;border-collapse:collapse;font-size:15px;margin:14px 0}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+
+/* ---- контакты ---- */
+.contact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);margin-top:14px}
+.contact h3{margin:0 0 8px;font-size:21px;letter-spacing:-.01em}
+.contact p{margin:0 0 20px;color:var(--muted)}
+.contact .actions{gap:12px}
+
+footer.site{padding:44px 0 64px;color:var(--muted);border-top:1px solid var(--line);margin-top:64px;font-size:14px}
+footer.site .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+
+/* ---- опыт ---- */
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+h3.block{font-size:clamp(18px,2.4vw,21px);margin:40px 0 6px;letter-spacing:-.015em}
+.facts{margin:12px 0 0;padding-left:22px}
+.facts li{margin:0 0 6px}
+.facts b{color:var(--ink)}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:16px}
+.quotes blockquote{
+  margin:0;background:var(--card);border:1px solid var(--line);
+  border-left:3px solid var(--accent);box-shadow:var(--shadow);font-size:15px
+}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px 18px;margin:0 0 10px;box-shadow:var(--shadow)
+}
+details summary{cursor:pointer;font-weight:600;display:flex;gap:10px;align-items:center}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";color:var(--accent);font-weight:700;width:12px}
+details[open] summary::before{content:"–"}
+details summary span{margin-left:auto;color:var(--muted);font-weight:400;font-size:14px}
+details ul{margin:12px 0 0;padding-left:20px;color:var(--muted)}
+details li{margin:0 0 4px}
+details li i{color:#9aa5b1;font-style:normal;font-size:13px;white-space:nowrap}
+@media print{ details{break-inside:avoid} }
+
+
+/* ---- скриншоты в кейсах ---- */
+.shot{margin:18px 0 4px}
+.shot img{width:100%;display:block;border-radius:12px;border:1px solid var(--line)}
+.shot figcaption{font-size:13px;color:var(--muted);margin-top:9px}
+
+
+/* ---- галерея скриншотов ---- */
+.shots{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin:18px 0 6px;align-items:start}
+.shots figure{margin:0}
+.shots img{width:100%;display:block;border-radius:12px;border:1px solid var(--line)}
+.shots figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+@media (max-width:700px){ .shots{grid-template-columns:1fr} }
+.shots.single{grid-template-columns:1fr}
+
+
+/* ---- блок «обо мне» с фото ---- */
+.about{display:grid;grid-template-columns:1fr 290px;gap:46px;align-items:center}
+.about-text{min-width:0}
+.portrait{margin:0}
+.portrait img{
+  width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:16px;border:1px solid var(--line);
+  box-shadow:0 22px 44px -22px rgba(16,24,40,.45)
+}
+.portrait figcaption{
+  margin-top:14px;font-size:15px;font-weight:600;text-align:center;letter-spacing:-.01em
+}
+.portrait figcaption span{display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:2px}
+@media (max-width:820px){
+  .about{grid-template-columns:1fr;gap:26px}
+  .portrait{order:-1;max-width:250px;margin:0 auto}
+}
+
+/* ---- печать ---- */
+@media print{
+  .topbar,.media,#theme,.actions{display:none}
+  .portrait{display:none}
+  .about{grid-template-columns:1fr}
+  body{background:#fff;color:#000}
+  .case,.stat,.service,.steps li,.contact{box-shadow:none;border-color:#ccc;break-inside:avoid}
+  a{color:#000;text-decoration:none}
+}
+@media (max-width:600px){
+  .case,.contact{padding:20px 18px}
+  .hero{padding:40px 0 26px}
+  .steps li{padding:18px 18px 18px 62px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#cases">Перейти к кейсам</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <rect width="34" height="34" rx="9" fill="var(--accent)"/>
+        <text x="17" y="24" font-family="Arial, sans-serif" font-size="19" font-weight="bold"
+              fill="var(--accent-ink)" text-anchor="middle">С</text>
+      </svg>
+      <span>Сергей Южный<small>Веб-разработчик</small></span>
+    </a>
+    <nav>
+      <a href="#experience">Опыт</a>
+      <a href="#services">Услуги</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#process">Как работаю</a>
+      <a href="#contact">Контакты</a>
+      <button id="theme" type="button" title="Сменить тему" aria-label="Сменить тему">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="wrap hero">
+    <div class="about">
+      <div class="about-text">
+        <span class="eyebrow">226 выполненных заказов · активно с 2021 года</span>
+        <h1>Разработка и доработка сайтов на WordPress</h1>
+        <p class="lead">Собираю сайты под ключ, переношу с Tilda, Bitrix и HTML-вёрстки,
+          верстаю по макетам из Figma, настраиваю WooCommerce и чиню то, что перестало
+          работать. Работаю и с чистым кодом, и с шаблонами — без визуальных конструкторов,
+          когда важна поддерживаемость.</p>
+        <div class="actions">
+          <a class="btn" href="https://t.me/svchserg" target="_blank" rel="noopener">Обсудить задачу</a>
+          <a class="btn ghost" href="#cases">Смотреть кейсы</a>
+        </div>
+      </div>
+
+      <figure class="portrait">
+        <img src="img/web/portrait.jpg" alt="Сергей Южный — веб-разработчик">
+        <figcaption>Сергей Южный<span>веб-разработчик</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap stats">
+    <div class="stat"><b>226</b><span>выполненных заказов</span></div>
+    <div class="stat"><b>115</b><span>клиентов</span></div>
+    <div class="stat"><b>35</b><span>вернулись с новыми задачами</span></div>
+    <div class="stat"><b>с 2021</b><span>года активно на WordPress</span></div>
+  </section>
+
+  <section class="wrap" id="services">
+    <h2>Услуги</h2>
+    <p class="sub">Беру как отдельные задачи, так и полный цикл — от структуры до наполнения.</p>
+    <div class="services">
+      <div class="service"><h3>Сайт на WordPress под ключ</h3><p>Структура, сборка на шаблоне или с нуля, наполнение контентом.</p></div>
+      <div class="service"><h3>Миграция на WordPress</h3><p>Перенос с Tilda, Bitrix и HTML-вёрстки с сохранением дизайна и функционала.</p></div>
+      <div class="service"><h3>Вёрстка по макету</h3><p>Натяжка макета из Figma или PSD на WordPress, адаптив под мобильные.</p></div>
+      <div class="service"><h3>WooCommerce</h3><p>Карточки товаров, корзина, оформление заказа, фильтры, личный кабинет.</p></div>
+      <div class="service"><h3>Доработка и поддержка</h3><p>Правки, новые блоки и разделы, исправление ошибок, ускорение загрузки.</p></div>
+      <div class="service"><h3>Дизайн в Figma</h3><p>Макеты сайтов и обложки продуктов.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="cases">
+    <h2>Кейсы</h2>
+    <p class="sub">Четыре задачи, которые показывают разные стороны работы: дизайн, миграция,
+      сборка на шаблоне и интернет-магазин.</p>
+
+    <article class="case">
+      <h3>Полный редизайн сайта B2B-интегратора: дизайн в Figma → вёрстка → WordPress</h3>
+      <div class="meta">
+        <span>Компания по автоматизации бизнеса</span>
+        <span>Дизайн — 4 дня</span>
+        <span>Figma · WordPress · Elementor</span>
+      </div>
+
+      <h4>Задача</h4>
+      <p>Полный редизайн действующего сайта: старый выглядел устаревшим и «костыльным»,
+        не продавал и не вызывал доверия. Нужно было пройти весь цикл — сделать новый
+        дизайн, сверстать его и перенести на WordPress. Не с нуля, а на работающем сайте,
+        сохранив все услуги.</p>
+
+      <h4>Что сделал</h4>
+      <ol>
+        <li><b>Дизайн.</b> Отрисовал новый макет в Figma с нуля: структура, блоки, визуальный
+          тон — под B2B-тематику и услуги клиента.</li>
+        <li><b>Согласование.</b> Показал макет клиенту до начала вёрстки — правки на этом
+          этапе стоят дешевле и не ломают готовый сайт.</li>
+        <li><b>Вёрстка.</b> Сверстал макет: адаптив под мобильные, кроссбраузерность.</li>
+        <li><b>Перенос на WordPress.</b> Натянул вёрстку на действующий сайт и подключил
+          к системе управления, чтобы клиент мог сам менять контент.</li>
+        <li>Перенёс и переработал все услуги со старого сайта в новой подаче.</li>
+      </ol>
+
+      <h4>Результат</h4>
+      <blockquote>«Заказ выполнен в срок, качественно и грамотно. Спасибо!»
+        <footer>OlgaLotz23</footer></blockquote>
+      <div class="result"><b>Повторный заказ:</b> через месяц этот же клиент вернулся
+        с задачей на дизайн обложек для продуктов в Figma.</div>
+      <h4>Ссылки</h4>
+      <ul class="facts">
+        <li><b>Живой сайт:</b> <a href="https://fitconsalting.ru/" target="_blank" rel="noopener">fitconsalting.ru</a>
+          — работает на WordPress + Elementor</li>
+      </ul>
+
+      <div class="shots single">
+<figure>
+          <img src="img/web/case-redesign-desktop.jpg" alt="fitconsalting.ru после редизайна — WordPress + Elementor">
+          <figcaption>fitconsalting.ru после редизайна — WordPress + Elementor</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="case">
+      <h3>Миграция сайта с Tilda на WordPress: вёрстка воспроизведена заново</h3>
+      <div class="meta">
+        <span>Производитель промышленных ворот</span>
+        <span>14 дней</span>
+        <span>PHP · HTML/CSS · без конструкторов</span>
+      </div>
+
+      <h4>Задача</h4>
+      <p>Перенести действующий сайт с Tilda на WordPress, сохранив дизайн и функционал.
+        Условие клиента: без Elementor, только чистый код, и с готовыми свёрстанными
+        блоками в админке, чтобы клиент сам собирал страницы.</p>
+
+      <h4>Что сделал</h4>
+      <ol>
+        <li>Перенёс структуру и контент с Tilda на WordPress.</li>
+        <li><b>Воспроизвёл вёрстку заново, а не тащил код конструктора.</b> Макетов не было —
+          работа шла визуально по исходному сайту. Экспортированные из Tilda стили в WordPress
+          не пошли: они тянут мусор, который потом невозможно поддерживать.</li>
+        <li>Свёрстал переиспользуемые блоки, которые клиент подставляет на страницы из админки.</li>
+        <li>Написал инструкцию по замене блоков.</li>
+      </ol>
+
+      <h4>Что было сложным</h4>
+      <p>Клиент принимал работу, сравнивая Тильду и WordPress построчно: любое отклонение
+        возвращалось новыми правками. Отсюда правило, которое я применяю теперь всегда:</p>
+      <div class="result"><b>Критерий приёмки — до начала работ.</b> Постраничные скриншоты
+        «до» на согласовании, список блоков и формулировка «соответствует по структуре,
+        контенту и расположению блоков» вместо абстрактного «один в один».</div>
+
+      <h4>Результат</h4>
+      <p>Сайт перенесён на WordPress, блоки работают, инструкция передана. Кейс не про
+        «посмотрите на сайт», а про процесс и управление ожиданиями.</p>
+
+      <h4>Ссылки</h4>
+      <ul class="facts">
+        <li><b>Сайт, с которого переносил:</b>
+          <a href="https://pro-gates.ru/" target="_blank" rel="noopener">pro-gates.ru</a></li>
+      </ul>
+
+      <div class="shots single">
+        <figure>
+          <img src="img/web/case-migration-desktop.jpg" alt="Сайт, с которого переносил на WordPress">
+          <figcaption>Сайт, с которого переносил на WordPress</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="case">
+      <h3>Адаптация премиум-шаблона WordPress под старый дизайн и специфику продажи дверей</h3>
+      <div class="meta">
+        <span>Продажа и изготовление премиум-дверей</span>
+        <span>5–7 дней вместо недели</span>
+        <span>WordPress · платный шаблон</span>
+      </div>
+
+      <h4>Задача</h4>
+      <p>У клиента был сайт по продаже и изготовлению премиум-дверей. Он купил новый платный
+        шаблон, но тот оказался под совершенно другой тематикой. Нужно было адаптировать
+        шаблон: перенести в него <b>старый дизайн и подачу</b> сайта и подстроить всё
+        под специфику товаров и услуг — двери, отделка, изготовление на заказ. Около
+        20 страниц: структура, меню, разделы, тексты, изображения.</p>
+      <p>Шаблон нестандартный, не на Elementor, и клиент по нему ничего подсказать не мог —
+        разбираться нужно было самому.</p>
+
+      <h4>Что сделал</h4>
+      <ol>
+        <li>Разобрался в платном шаблоне <b>без конструктора</b>, на его собственной логике:
+          от разработчика были только короткие видеоинструкции.</li>
+        <li><b>Перенёс в шаблон старый дизайн сайта:</b> цветовую гамму, подачу, стиль блоков.</li>
+        <li><b>Адаптировал шаблон под специфику товаров и услуг</b> — двери, отделку,
+          изготовление на заказ: переработал карточки и блоки под то, что продаёт клиент.</li>
+        <li>Собрал структуру сайта и меню под 20 страниц.</li>
+        <li>Переработал контент: рерайт текстов, подбор изображений.</li>
+        <li>Адаптировал под мобильные, проверил кроссбраузерность и настроил базовые
+          параметры скорости загрузки.</li>
+        <li><b>Прислал черновой вариант на согласование</b> структуры и рерайта — до финальной
+          сдачи, чтобы все правки не собирались в конце.</li>
+      </ol>
+
+      <h4>Работа после сдачи</h4>
+      <p>Клиент нашёл на главной странице две проблемы: кнопки внизу не влезали целиком,
+        логотипы встали криво. Исправил и обновил в тот же день. Дальше клиент сам опустил
+        кнопки и увеличил логотипы, но заметил, что логотипы видны только после прокрутки,
+        и спросил, скрипт ли это.</p>
+      <div class="result"><b>Ответил честно:</b> так работает ленивая загрузка в самом
+        шаблоне — элементы доезжают через пару секунд. Переделывать её значило бы ломать
+        логику темы и получить новые проблемы на ровном месте.</div>
+      <p>Заказ закрыт, покупатель принял работу.</p>
+
+      <h4>Ссылки</h4>
+      <p>Сайт проекта больше не работает, публичной ссылки нет — кейс держится
+        на описании и скриншотах.</p>
+
+      <p class="sub">Скриншоты страниц пришлю по запросу — сайт не сохранился.</p>
+    </article>
+
+    <article class="case">
+      <h3>WooCommerce: починка фильтра товаров и вёрстка страниц по макетам</h3>
+      <div class="meta">
+        <span>Интернет-магазин светильников</span>
+        <span>WordPress · WooCommerce · Figma</span>
+      </div>
+
+      <h4>Задача</h4>
+      <p>Доделать интернет-магазин: починить фильтр товаров и сверстать страницы — карточку
+        товара, корзину, оформление заказа, регистрацию, избранное. Макеты предоставлены
+        в Figma.</p>
+
+      <h4>Проблема, которую решал</h4>
+      <p>Фильтр не работал: при его применении вёрстка ломалась — фильтр оставался отдельным
+        блоком, товары «уезжали» вниз, подкатегории перекрывали список.</p>
+
+      <h4>Что сделал</h4>
+      <ol>
+        <li>Нашёл причину поломки: конфликт вывода фильтра и блока товаров.</li>
+        <li>Исправил вывод — товары снова корректно сортируются и фильтруются по всем
+          категориям: цена, размер, цвет, место применения, цвет свечения.</li>
+        <li>Сверстал страницы магазина по макетам.</li>
+        <li>Продолжил работу с клиентом: это был не первый и не последний совместный заказ.</li>
+      </ol>
+
+      <h4>Результат</h4>
+      <p>Магазин работает, фильтр функционирует, страницы свёрстаны.</p>
+
+      <h4>Ссылки</h4>
+      <p>Публичной ссылки нет: домен клиента в ТЗ не назывался. Макеты, по которым верстал,
+        клиент присылал в Figma — показывать их можно только с его разрешения:
+        <a href="https://www.figma.com/file/qr6ZMnfu5VrNMPoPoMRU1h/" target="_blank" rel="noopener">корзина</a>,
+        <a href="https://www.figma.com/file/M0JpE9odQFB7AXj6dtWZQ7/" target="_blank" rel="noopener">регистрация</a>,
+        <a href="https://www.figma.com/file/rLcEGpXAkbDdfmamrMnmwY/" target="_blank" rel="noopener">отложенные товары</a>.</p>
+
+      <p class="sub">Скриншоты «до/после» фильтра пришлю по запросу.</p>
+    </article>
+  <article class="case">
+    <h3>Поддержка сайта на старой теме WordPress: доработки без смены дизайна</h3>
+    <div class="meta">
+      <span>Кузня «Стальные Идеи»</span>
+      <span>WordPress · WooCommerce · старая тема</span>
+    </div>
+
+    <h4>Задача</h4>
+    <p>Доработки действующего сайта кузнечной мастерской «Стальные Идеи». Особенность
+      проекта: сайт работает на теме, которая создавалась очень давно, а заказчик
+      <b>не готов её менять</b> — дизайн, структуру и привычную админку нужно сохранить.</p>
+
+    <h4>В чём сложность</h4>
+    <p>Такая тема не рассчитана на текущие версии WordPress. Каждое обновление ядра или
+      подключение нового плагина даёт конфликты: что-то отваливается, ломается вёрстка,
+      перестают работать модули. Менять тему на современную заказчик не хочет, поэтому
+      все задачи приходится решать внутри старой — с оглядкой на то, что она
+      не поддерживает новые стандарты.</p>
+
+    <h4>Как решаю такие задачи</h4>
+    <ol>
+      <li>Сначала проверяю, как изменение поведёт себя с уже установленными плагинами
+        и текущей версией WordPress, — и только потом вношу.</li>
+      <li>Делаю точечные правки, не затрагивая существующий дизайн и структуру.</li>
+      <li>После изменений проверяю сайт целиком, а не только тот блок, который правил:
+        на старых темах поломка почти всегда вылезает в другом месте.</li>
+    </ol>
+
+    <h4>Результат</h4>
+    <p>Сайт работает на WordPress с WooCommerce, тема сохранена — заказчик продолжает
+      работать на привычной админке, ничего переделывать не пришлось.</p>
+
+    <div class="shots single">
+      <figure>
+        <img src="img/web/case-steel-ideas-desktop.jpg"
+             alt="Сайт кузнечной мастерской «Стальные Идеи» — главная страница">
+        <figcaption>Главная страница сайта «Стальные Идеи» — производство художественной
+          ковки. WordPress + WooCommerce, работает прямо сейчас.</figcaption>
+      </figure>
+    </div>
+
+    <h4>Ссылки</h4>
+    <ul class="facts">
+      <li><b>Живой сайт:</b>
+        <a href="https://steel-ideas.ru/" target="_blank" rel="noopener">steel-ideas.ru</a></li>
+    </ul>
+
+    <div class="result"><b>Почему это отдельный навык.</b> Поддержка старых сайтов —
+      не то же самое, что сборка новых. Не все заказчики готовы на переезд, и такие
+      проекты надо уметь тянуть: обновляться вслепую нельзя, а сломать работающий сайт
+      дороже, чем построить новый.</div>
+  </article>
+
+
+    <article class="case">
+      <h3>Каталог межкомнатных дверей на WordPress: 1 600 позиций</h3>
+      <div class="meta">
+        <span>Магазин дверей и арок</span>
+        <span>WordPress · WooCommerce · кастомный шаблон</span>
+      </div>
+
+      <h4>Задача</h4>
+      <p>Поставить WordPress на хостинг заказчика вместо старого сайта, развернуть выбранный
+        шаблон и наполнить каталог. Магазин как таковой не нужен: кнопка «Заказать»
+        в карточке товара ведёт на форму обратной связи. Плюс отдельная задача —
+        <b>написать заказчику инструкцию</b>, как пополнять каталог самостоятельно.</p>
+
+      <h4>Что сделал</h4>
+      <ol>
+        <li>Установил и настроил WordPress на хостинге заказчика, старый сайт сохранил в <code>/old/</code>.</li>
+        <li>Подобрал варианты шаблонов — платные и бесплатные аналоги — и развернул выбранный заказчиком.</li>
+        <li>Собрал каталог: категории, вывод категорий в левой колонке, три колонки товаров.</li>
+        <li><b>Наполнил каталог массово:</b> 282 позиции на первой итерации, затем довёл до 1 600 товаров.</li>
+        <li>Настроил карточку товара: кнопка заказа ведёт на форму обратной связи.</li>
+        <li>Убрал по просьбе заказчика лишние блоки: отзывы, формы, FAQ.</li>
+        <li>Подключил карту на страницу контактов.</li>
+        <li>Передал заказчику инструкцию по пополнению каталога.</li>
+      </ol>
+
+      <h4>Что было сложным</h4>
+      <p>Базы товаров не существовало. Была только папка с фотографиями дверей: около
+        380 файлов без названий, где часть снимков — одна и та же модель в разных ракурсах
+        и цветах, плюс палитры цветов и посторонние кадры. Названия моделей нигде
+        не хранились.</p>
+      <div class="result"><b>Как решили:</b> загружаю фотографии «один к одному», позиции
+        получают рабочие номера, а категории и названия заказчик приводит в порядок сам.
+        Поэтому объём каталога вырос с 282 до 1 600 позиций — разобрать на стороне
+        заказчика оказалось быстрее, чем чистить 380 фотографий вручную.</div>
+
+      <h4>Результат</h4>
+      <blockquote>«Всё отлично, рекомендую, как ответственного исполнителя!»
+        <footer>DIM_STUDIO</footer></blockquote>
+
+      <h4>Ссылки</h4>
+      <ul class="facts">
+        <li><b>Живой сайт:</b> <a href="https://skon-art.ru/" target="_blank" rel="noopener">skon-art.ru</a></li>
+        <li><b>Каталог:</b> <a href="https://skon-art.ru/shop/" target="_blank" rel="noopener">skon-art.ru/shop</a>
+          — сейчас 485 позиций, каталог с тех пор менялся</li>
+      </ul>
+      <p class="sub"><b>Осторожно перед публикацией:</b> на странице <code>/contact/</code>
+        остался демо-текст шаблона (Lorem ipsum, американский адрес и телефон). Старая
+        версия <code>/old/</code> отдаёт ошибку 500, как «до» не годится.</p>
+
+      <div class="shots single">
+<figure>
+          <img src="img/web/case-doors-catalog-desktop.jpg" alt="Каталог skon-art.ru: категории слева, три колонки товаров">
+          <figcaption>Каталог skon-art.ru: категории слева, три колонки товаров</figcaption>
+        </figure>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="wrap" id="experience">
+  <h2>Опыт: 226 заказов по направлениям</h2>
+  <p class="sub">Кейсы показывают, как я работаю. А это — сколько раз и что именно делал: каждое направление закрыто не одним заказом, а десятками.</p>
+  <div class="grid-cards">
+    <div class="service"><h3>Создание сайтов и лендингов</h3><p><b>15</b> заказов</p></div>
+    <div class="service"><h3>Перенос, копирование и миграция сайтов</h3><p><b>26</b> заказов</p></div>
+    <div class="service"><h3>Вёрстка и натяжка макетов</h3><p><b>25</b> заказов</p></div>
+    <div class="service"><h3>Доработка и правки существующих сайтов</h3><p><b>91</b> заказов</p></div>
+    <div class="service"><h3>Восстановление и починка сайтов</h3><p><b>7</b> заказов</p></div>
+    <div class="service"><h3>Функционал: формы, попапы, кабинеты</h3><p><b>23</b> заказов</p></div>
+    <div class="service"><h3>Интернет-магазины и WooCommerce</h3><p><b>7</b> заказов</p></div>
+    <div class="service"><h3>Контент, страницы, локализация</h3><p><b>12</b> заказов</p></div>
+    <div class="service"><h3>Дизайн</h3><p><b>1</b> заказов</p></div>
+    <div class="service"><h3>HTML-письма и рассылки</h3><p><b>5</b> заказов</p></div>
+    <div class="service"><h3>Скорость, SEO, аналитика</h3><p><b>9</b> заказов</p></div>
+    <div class="service"><h3>Прочее и точечные задачи</h3><p><b>5</b> заказов</p></div>
+  </div>
+  <div class="grid-cards" style="margin-top:22px">
+    <div class="stat"><b>115</b><span>покупателей за всё время</span></div>
+    <div class="stat"><b>146</b><span>заказов от вернувшихся клиентов</span></div>
+    <div class="stat"><b>65%</b><span>работы — от повторных обращений</span></div>
+    <div class="stat"><b>102</b><span>заказов с отзывом покупателя</span></div>
+  </div>
+  <h3 class="block">Стек</h3>
+  <ul class="facts">
+    <li><b>Платформа:</b> WordPress, WooCommerce, Elementor, WP Forms, Oxygen Builder</li>
+    <li><b>Код:</b> PHP, HTML, CSS, JavaScript, вёрстка без конструкторов</li>
+    <li><b>Переносы:</b> с Tilda, Bitrix и HTML-вёрстки на WordPress</li>
+    <li><b>Дизайн:</b> Figma, Photoshop — макеты, обложки, натяжка на сайт</li>
+    <li><b>Оптимизация:</b> скорость загрузки, мобильная версия, базовая SEO-настройка</li>
+    <li><b>Письма:</b> HTML-вёрстка писем и рассылок</li>
+  </ul>
+  <h3 class="block">Отзывы клиентов</h3>
+  <p class="sub">Имена покупателей не привожу — только тексты.</p>
+  <div class="quotes">
+    <blockquote>«Сергей всё выполнил на высшем уровне, сделал то, что не смогли сделать другие исполнители, буду обращаться! Рекомендую как ответственного исполнителя!»<footer>DIM_STUDIO · Сделать копию сайта на WP, 2022</footer></blockquote>
+    <blockquote>«Сергей большой молодец, все выполнил в срок и без нареканий с первого раза. Буду обращаться еще. Рекомендую к сотрудничеству!»<footer>Constantin_K · Верстка одной странице на elementor, 2023</footer></blockquote>
+    <blockquote>«Быстрое и качественное выполнение работы. Сергей профессионал в своем деле, однозначно рекомендую!»<footer>lysyena · Доработки на wordpress, 2022</footer></blockquote>
+    <blockquote>«К этому исполнителю обращаюсь не в первый раз. Каждый раз задача выполнена на отлично! Рекомендую!»<footer>brvk · Добавить возможность просмотра видеоролика, 2024</footer></blockquote>
+    <blockquote>«Работали с Сергеем по исправлению ошибок на сайте, Сергей сделал все быстро и качественно, рекомендую.»<footer>pawellcom · Помощь по сайту на Adobe Muse, 2022</footer></blockquote>
+    <blockquote>«Заказ выполнен в срок, качественно и грамотно. Спасибо!»<footer>OlgaLotz23 · Отрисовать и натянуть макет на Wordpress, 2025</footer></blockquote>
+    <blockquote>«Всё отлично! Спасибо за выполненную работу! Рекомендую исполнителя к сотрудничеству!»<footer>DIM_STUDIO · Доработка сайта по тз, 2023</footer></blockquote>
+    <blockquote>«Работа по выставлению видео на сайте выполнена на отлично! Все быстро и качественно. Как идею нужно было реализовать так и получилось. Думаю еще поработаем!»<footer>Logist17 · Добавление видео с ютюба на сайт, 2020</footer></blockquote>
+    <blockquote>«Отличная работа! Быстро и качественно! Поэтому обратился повторно для выполнению работы по адаптации очередного сайта -  royaldatingsite. net»<footer>sergeycv · Адаптивная верстка сайта, 2019</footer></blockquote>
+    <blockquote>«Всё отлично, рекомендую, как ответственного исполнителя!»<footer>DIM_STUDIO · Создание сайта, 2026</footer></blockquote>
+    <blockquote>«Всё отлично! рекомендую как ответственного исполнителя!»<footer>DIM_STUDIO · Создание сайта, 2025</footer></blockquote>
+    <blockquote>«Спасибо Сергею за потрясающе выполненную работу – Специалист Wordpress с Большой Буквы. Обращаемся не в первый и не в последний раз. Великолепно скопирован дизайн с одного сайта на другой, выполнено множество правок, все доведено до совершенства! В общем, мы в восторге! Рекомендую дынный Кворк и Продавца!»<footer>anthonyfadeyev · Перенос дизайна на вордпрес, 2025</footer></blockquote>
+    <blockquote>«Очень четко и быстро. Хорошо знает элементор и дополнительные скрипты, была задача не простая с выгрузкой в гугл таблицы результатов подписки. Всё на высшем уровне, рекомендую!»<footer>josgir · Восстановление кода, 2024</footer></blockquote>
+    <blockquote>«Задачу решил профессионально и в срок. Сделал много полезных правок в качестве подарка. Приятное общение»<footer>immobil2002 · Доработка сайта, 2024</footer></blockquote>
+  </div>
+  <h3 class="block">Полный перечень выполненных работ</h3>
+  <p class="sub">Все 226 заказов по направлениям: название и год. Разверни нужный раздел. Без имён покупателей и сумм.</p>
+  <details><summary>Создание сайтов и лендингов <span>15</span></summary><ul>
+    <li>Создание сайта <i>2026</i></li>
+    <li>Сделать новый сайт <i>2025</i></li>
+    <li>Создание сайта <i>2025</i></li>
+    <li>Создать сайт организации на Wordpress <i>2025</i></li>
+    <li>Собрать лендинг по дизайну на ВП Элементор <i>2024</i></li>
+    <li>Создание сайта по ТЗ <i>2023</i></li>
+    <li>Разработать многостраничные сайт на Wordpress <i>2023</i></li>
+    <li>Опубликовать лэндинг wordpress <i>2023</i></li>
+    <li>Создание сайта <i>2023</i></li>
+    <li>Создание сайта каталога с ноля <i>2023</i></li>
+    <li>Необходимо по отрисованному дизайну создать сайт с нуля <i>2023</i></li>
+    <li>Создание сайта на WordPress с СЕО-оптимизацией <i>2023</i></li>
+    <li>Создать лендинг страницу на готовом сайте WP <i>2023</i></li>
+    <li>Сделать лендинг на вордпресс <i>2021</i></li>
+    <li>Сайт под ключ на WP и перенести контент с донора <i>2020</i></li>
+  </ul></details>
+  <details><summary>Перенос, копирование и миграция сайтов <span>26</span></summary><ul>
+    <li>Перенос сайта <i>2025</i></li>
+    <li>Перенос сайтов <i>2025</i></li>
+    <li>Перенос дизайна на вордпрес <i>2025</i></li>
+    <li>Копирование дизайна сайта, форм связи <i>2024</i></li>
+    <li>Перенос сайта с Тильда на Вордпресс <i>2024</i></li>
+    <li>Перенести ленд с Ти на ВордПресс <i>2024</i></li>
+    <li>Перенести сайт с HTML на Wordpress и сделать адаптивным <i>2024</i></li>
+    <li>Копирование сайта <i>2023</i></li>
+    <li>Перенос контента , наполнение сайта <i>2023</i></li>
+    <li>Копия сайта, перенос на Вордпресс <i>2023</i></li>
+    <li>Перенос сайта на вордперс <i>2023</i></li>
+    <li>Копия сайта, перенос на ВордПресс <i>2023</i></li>
+    <li>Перенос html-вёрстки на WordPress <i>2023</i></li>
+    <li>Копирование сайта на вордпрес <i>2023</i></li>
+    <li>Копирование сайта на вордпрес <i>2023</i></li>
+    <li>Копирование сайта <i>2022</i></li>
+    <li>Копирование сайта <i>2022</i></li>
+    <li>Сделать копию сайта на WP <i>2022</i></li>
+    <li>Покупатель Оплачено Стоимость Заметка Статус Копия сайта с доработками на Wordpress <i>2022</i></li>
+    <li>Перенос html на Wordpress <i>2022</i></li>
+    <li>Перенос сайта с Битрикс на ВП <i>2022</i></li>
+    <li>Поставить сайт на WordPress" <i>2022</i></li>
+    <li>Перенос сайта <i>2022</i></li>
+    <li>Скопировать сайт и разделы <i>2022</i></li>
+    <li>Перенос сайта <i>2021</i></li>
+    <li>Скопировать сайт <i>2020</i></li>
+  </ul></details>
+  <details><summary>Вёрстка и натяжка макетов <span>25</span></summary><ul>
+    <li>Необходимо сверстать страницу на сайте - Wordpress <i>2025</i></li>
+    <li>Отрисовать и натянуть макет на Wordpress <i>2025</i></li>
+    <li>Вёрстка и натяжка сайта на вордпрес <i>2024</i></li>
+    <li>Сверстать тему для Wordpress с Макета Figma <i>2024</i></li>
+    <li>Верстка сайта на вордпресс и первичное сео <i>2024</i></li>
+    <li>Верстка сайта на вордпресс и первичное сео <i>2024</i></li>
+    <li>Верстка страницы на WordPress+Elementor(дизайн в фигме) <i>2024</i></li>
+    <li>Сверстать главную страницу <i>2024</i></li>
+    <li>Сверстать сайт и подключить к WP <i>2023</i></li>
+    <li>Вёрстка ни натяжка сайта на вордперс <i>2023</i></li>
+    <li>Вёрстка и создание новой страницы <i>2023</i></li>
+    <li>Верстка одной странице на elementor <i>2023</i></li>
+    <li>Вёрстка макета <i>2023</i></li>
+    <li>Натянуть верстку на WordPress <i>2023</i></li>
+    <li>Сверстать 6 статейных страниц на WP по макетам <i>2022</i></li>
+    <li>Вёрстка PSD макета <i>2022</i></li>
+    <li>Установить макет на WordPress <i>2022</i></li>
+    <li>Верстка по макету в psd <i>2021</i></li>
+    <li>Сверстать сайт на ВордПрессе по примеру <i>2021</i></li>
+    <li>Изменения вёрстки сайта <i>2020</i></li>
+    <li>Адаптировать главную страницу магазина под мобильные устройства <i>2020</i></li>
+    <li>Изменить главную страницу по макету <i>2020</i></li>
+    <li>Адаптивная верстка сайта <i>2019</i></li>
+    <li>Адаптивная верстка сайта <i>2019</i></li>
+    <li>Адаптивная верстка сайта <i>2019</i></li>
+  </ul></details>
+  <details><summary>Доработка и правки существующих сайтов <span>91</span></summary><ul>
+    <li>Доработка сайта <i>2026</i></li>
+    <li>Доработка сайта на ВП <i>2026</i></li>
+    <li>Доработка сайта <i>2026</i></li>
+    <li>Доработка сайта <i>2026</i></li>
+    <li>Доработка сайта <i>2025</i></li>
+    <li>Доработка сайта по ТЗ <i>2025</i></li>
+    <li>Доработка сайта <i>2025</i></li>
+    <li>Доработка сайта <i>2025</i></li>
+    <li>Доработка сайта <i>2025</i></li>
+    <li>Доработка сайта <i>2025</i></li>
+    <li>Доработка сайта <i>2025</i></li>
+    <li>Доработка сайта <i>2025</i></li>
+    <li>Доработка сайта <i>2025</i></li>
+    <li>Доработка сайта <i>2025</i></li>
+    <li>Доработка сайта <i>2025</i></li>
+    <li>Доработать дизайн сайта на вордпресс <i>2025</i></li>
+    <li>Доработка сайта <i>2024</i></li>
+    <li>Доработка сайта по ТЗ <i>2024</i></li>
+    <li>Доработки по сайту steel-ideas.ru <i>2024</i></li>
+    <li>Доработка сайта <i>2024</i></li>
+    <li>Доработка сайта﻿ <i>2024</i></li>
+    <li>Доработка сайтов <i>2024</i></li>
+    <li>Доработка Wordpress + WP Forms <i>2024</i></li>
+    <li>Доработка блоков сайта <i>2024</i></li>
+    <li>Доработка сайта <i>2024</i></li>
+    <li>Доработка сайта <i>2024</i></li>
+    <li>Доработка сайта <i>2024</i></li>
+    <li>Доработка сайта, добавление нвостей <i>2024</i></li>
+    <li>Нужно внести небольшие правки на сайт <i>2024</i></li>
+    <li>Доработка сайта <i>2024</i></li>
+    <li>Доработка сайта <i>2024</i></li>
+    <li>Доработка сайта <i>2024</i></li>
+    <li>Доработать сайт <i>2024</i></li>
+    <li>Доработать сайт на wordpress с oxygen builder <i>2024</i></li>
+    <li>Доработка сайта <i>2024</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>ДОработка сайта <i>2023</i></li>
+    <li>Wordpress доработка <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Доработка функционала сайта <i>2023</i></li>
+    <li>Доработка сайта сантехники <i>2023</i></li>
+    <li>Доработка страниц сайта <i>2023</i></li>
+    <li>Задача обновить объекты <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Доработка сайта на Wordpress <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Нужна доработка страниц сайта услуг на WordPress <i>2023</i></li>
+    <li>Небольшие правки на лендинг <i>2023</i></li>
+    <li>Правки на WordPress <i>2023</i></li>
+    <li>Правка страницы сайта на WP <i>2023</i></li>
+    <li>Доработать по сайту (вордпресс) <i>2023</i></li>
+    <li>Настройка темы (Шаблона) wordpress <i>2023</i></li>
+    <li>Доработка сайта по тз <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Правки на WordPress <i>2023</i></li>
+    <li>Доработка сайта <i>2023</i></li>
+    <li>Правки на WP <i>2023</i></li>
+    <li>Доработка и настройка сайта <i>2023</i></li>
+    <li>Сделать полосу на сайте wordpress <i>2022</i></li>
+    <li>Доработка сайта <i>2022</i></li>
+    <li>Доработка сайта на WP <i>2022</i></li>
+    <li>Доработки на wordpress <i>2022</i></li>
+    <li>Доработать сайт на WordPress <i>2022</i></li>
+    <li>Доработка сайта <i>2022</i></li>
+    <li>Доработка дизайна темы <i>2022</i></li>
+    <li>Доработка сайта <i>2022</i></li>
+    <li>Доработка сайта <i>2022</i></li>
+    <li>Доработка сайта <i>2022</i></li>
+    <li>Доработка функционала <i>2022</i></li>
+    <li>Доработка сайта <i>2022</i></li>
+    <li>Доработка сайта <i>2022</i></li>
+    <li>Правки на сайте <i>2022</i></li>
+    <li>Доработки сайта <i>2022</i></li>
+    <li>Доработка сайта <i>2021</i></li>
+    <li>Правки на WP <i>2021</i></li>
+    <li>Правки по сайту на WP <i>2021</i></li>
+    <li>Правки по сайту на WP <i>2021</i></li>
+    <li>Изменить дизайн сайта на WordPress <i>2020</i></li>
+    <li>Доработка сайта на вордпресс <i>2020</i></li>
+    <li>Доработка и настройка сайта <i>2020</i></li>
+    <li>Доработка шаблона <i>2020</i></li>
+    <li>Доработка сайта <i>2020</i></li>
+    <li>Правки сайта <i>2019</i></li>
+    <li>Редактирование сайта <i>2019</i></li>
+    <li>Доделать тему вордпресс <i>2019</i></li>
+  </ul></details>
+  <details><summary>Восстановление и починка сайтов <span>7</span></summary><ul>
+    <li>Восстановление работы сайта <i>2026</i></li>
+    <li>Восстановление работы сайта <i>2024</i></li>
+    <li>Восстановление кода <i>2024</i></li>
+    <li>Восстановление работы сайта <i>2024</i></li>
+    <li>Исправить ошибку на сайте Wordpress <i>2023</i></li>
+    <li>Восстановить сайт <i>2023</i></li>
+    <li>Восстановление работы сайта <i>2022</i></li>
+  </ul></details>
+  <details><summary>Функционал: формы, попапы, кабинеты <span>23</span></summary><ul>
+    <li>Настройка формы <i>2024</i></li>
+    <li>Сделать форму для отправки для обратной связи <i>2024</i></li>
+    <li>Добавить в форму на сайте чтобы письма приходили на email <i>2024</i></li>
+    <li>Личный кабинет для сайта на WP <i>2024</i></li>
+    <li>Elementor сделать popup окно <i>2024</i></li>
+    <li>Новости каруселью <i>2024</i></li>
+    <li>Создать форму регистрации на мероприятие на Wordpress <i>2024</i></li>
+    <li>Всплывающее окно при открытии сайтов <i>2024</i></li>
+    <li>Добавить возможность просмотра видеоролика <i>2024</i></li>
+    <li>Сделать на элементор вывод перечня специалистов <i>2024</i></li>
+    <li>Написать код для настройки формы заявки <i>2024</i></li>
+    <li>Работа по установки сертификата <i>2023</i></li>
+    <li>Вывести комментарии на главную wp <i>2023</i></li>
+    <li>Добавить виджет <i>2023</i></li>
+    <li>Добавление функционала на сайт wordpress <i>2022</i></li>
+    <li>Поправить верстку+подключить скрипт отправки формы <i>2022</i></li>
+    <li>Сделать вывод рубрик где нет записей WP <i>2022</i></li>
+    <li>Доработка кнопки на сайте вордпрес <i>2022</i></li>
+    <li>Доработать меню на сайте WP <i>2022</i></li>
+    <li>Установить калькулятор на сайт <i>2022</i></li>
+    <li>Установить на отдельную страницу Wordpress код сервиса avtocod.ru <i>2020</i></li>
+    <li>Добавление видео с ютюба на сайт <i>2020</i></li>
+    <li>Анимация и эффекты <i>2020</i></li>
+  </ul></details>
+  <details><summary>Интернет-магазины и WooCommerce <span>7</span></summary><ul>
+    <li>Доработка карточки товара <i>2024</i></li>
+    <li>Настроить фильтрацию в категории товаров на WordPress <i>2024</i></li>
+    <li>Доработка интернет магазина на woocommerce <i>2024</i></li>
+    <li>На слайдеры товаров вукомерс поставить попап <i>2024</i></li>
+    <li>Работы по сайту настройка woocommerce <i>2023</i></li>
+    <li>ДОбавление карточек товара <i>2023</i></li>
+    <li>Добавить фото товаров Wordpress <i>2023</i></li>
+  </ul></details>
+  <details><summary>Контент, страницы, локализация <span>12</span></summary><ul>
+    <li>Добавить текст и фото на сайте Wp <i>2024</i></li>
+    <li>Заменить контент на странице <i>2023</i></li>
+    <li>Создание новой страницы <i>2023</i></li>
+    <li>Редизайн страницы <i>2023</i></li>
+    <li>WordPress. Создание нового раздела <i>2023</i></li>
+    <li>Создать страницу благодарности WordPress <i>2023</i></li>
+    <li>Создание и доработка страницы <i>2023</i></li>
+    <li>Добавить раздел новостей WordPresses элементор <i>2023</i></li>
+    <li>Переделать одну страницу сайта на worldpress <i>2022</i></li>
+    <li>Заменить в шапке НАШ АДРЕС и график работы <i>2020</i></li>
+    <li>Доработка и перевод <i>2020</i></li>
+    <li>Заменить на сайте остатки английского текста <i>2020</i></li>
+  </ul></details>
+  <details><summary>Дизайн <span>1</span></summary><ul>
+    <li>Создание обложек для продуктов <i>2025</i></li>
+  </ul></details>
+  <details><summary>HTML-письма и рассылки <span>5</span></summary><ul>
+    <li>Дизайн и верстка html письма <i>2020</i></li>
+    <li>HTML письмо <i>2020</i></li>
+    <li>Сверстать email письмо для рассылки <i>2019</i></li>
+    <li>Html коммерческое <i>2019</i></li>
+    <li>Редактирование подписного письма в html коде <i>2019</i></li>
+  </ul></details>
+  <details><summary>Скорость, SEO, аналитика <span>9</span></summary><ul>
+    <li>Оптимизация скорости загрузки сайта <i>2023</i></li>
+    <li>Ускорение загрузки <i>2023</i></li>
+    <li>Оптимизация работы главной страницы <i>2022</i></li>
+    <li>Вебвизор вставить <i>2021</i></li>
+    <li>Настроить правильную подгрузку сайта <i>2021</i></li>
+    <li>Сео оптимизация сайта <i>2020</i></li>
+    <li>Оптимизация скорости сайта для ПК <i>2020</i></li>
+    <li>Ускорение загрузки мобильной версии сайта <i>2020</i></li>
+    <li>Оптимизация сайта под мобильную версию <i>2020</i></li>
+  </ul></details>
+  <details><summary>Прочее и точечные задачи <span>5</span></summary><ul>
+    <li>Анализ конкурентов в вашей нише на Ютюб <i>2023</i></li>
+    <li>Помощь по сайту на Adobe Muse <i>2022</i></li>
+    <li>Индивидуальный заказ ZorroSmm #2 <i>2022</i></li>
+    <li>Таргетированная реклама Вконтакте. Бонусы <i>2019</i></li>
+    <li>Редактура + работа с авторами + анонс статьи в соцсетях <i>2018</i></li>
+  </ul></details>
+</section>
+
+  <section class="wrap" id="process">
+    <h2>Как я работаю</h2>
+    <p class="sub">Четыре правила, которые сформировались за 226 заказов.</p>
+    <ol class="steps">
+      <li><b>Фиксирую результат до старта.</b><p>Проговариваю, что считается готовой работой:
+        список страниц или блоков, критерий приёмки. Это защищает обе стороны.</p></li>
+      <li><b>Согласую макет до вёрстки.</b><p>Если задача дизайнерская — сначала макет
+        и правки по нему, потом код.</p></li>
+      <li><b>Работаю без конструктора, когда это важно.</b><p>Чистый код поддерживать проще,
+        чем сборку из блоков визуального редактора.</p></li>
+      <li><b>Остаюсь на связи после сдачи.</b><p>35 клиентов вернулись с новыми задачами —
+        это лучший показатель качества работы.</p></li>
+    </ol>
+  </section>
+
+  <section class="wrap" id="contact">
+    <h2>Контакты</h2>
+    <div class="contact">
+      <h3>Расскажите о задаче — вернусь с оценкой и сроком</h3>
+      <p>Обычно отвечаю в течение пары часов. Если задача не моя — скажу прямо
+        и подскажу, куда обратиться.</p>
+      <div class="actions">
+        <a class="btn" href="https://t.me/svchserg" target="_blank" rel="noopener">Написать в Telegram — @svchserg</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Сергей Южный · веб-разработчик</span>
+    <span style="margin-left:auto"><a href="#top">Наверх</a></span>
+  </div>
+</footer>
+
+<script>
+  // Переключатель темы: авто → тёмная → светлая, выбор запоминается
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('theme');
+    var saved = localStorage.getItem('theme');
+    if (saved) root.dataset.theme = saved;
+
+    function isDarkNow() {
+      return root.dataset.theme === 'dark' ||
+        (root.dataset.theme !== 'light' &&
+         window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+    function label() {
+      btn.title = isDarkNow() ? 'Включить светлую тему' : 'Включить тёмную тему';
+      btn.setAttribute('aria-label', btn.title);
+    }
+
+    btn.addEventListener('click', function () {
+      var next = isDarkNow() ? 'light' : 'dark';
+      root.dataset.theme = next;
+      localStorage.setItem('theme', next);
+      label();
+    });
+    label();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+</script>
+
+</body>
+</html>
